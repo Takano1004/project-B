@@ -17,4 +17,4 @@ def create_route(app):
     
 @app.route("/lost-user")
 def lost_user():
-    return render_template("lost_user.html")
+    return controller.lost_user()
