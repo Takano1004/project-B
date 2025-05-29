@@ -15,6 +15,6 @@ def create_route(app):
                 return controller.json(d)
         return("GETパラメータを指定してください")
     
-@app.route("/lost-user")
-def lost_user():
-    return controller.lost_user()
+ @app.route("/lost-user") 
+    def lost_user():
+        return controller.lost_user()
