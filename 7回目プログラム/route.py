@@ -16,4 +16,3 @@ def create_route(app):
         return "GETパラメータを指定してください"
     @app.route("/lost-user")
     def lost_user():
-        return "ルート！"
