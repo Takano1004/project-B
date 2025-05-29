@@ -86,3 +86,8 @@ def j_category():
             })
     return(obj)
 
+from flask import render_template
+
+def lost_user():
+    return render_template("lost_user.html")
+
