@@ -25,4 +25,16 @@ def create_route(app):
     @app.route("/item/list")
     def item_list():
         return render_template("item_list.html")
-    
+
+    @app.route("/lost/user")
+    def lost_user():
+        return controller.lost_user()
+
+    @app.route("/lost/register")
+    def lost_register():
+        return controller.lost_register()
+
+    @app.route("/form/download")
+    def form_download():
+        return controller.form_download()
+
