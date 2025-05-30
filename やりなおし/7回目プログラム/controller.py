@@ -85,4 +85,14 @@ def j_category():
             "貴重品":i.貴重品, 
             })
     return(obj)
+def lost_user():
+    return render_template("lost_user.html")
+
+def lost_register():
+    return render_template("lost_register.html")
+
+def form_download():
+    return render_template("form_download.html")
+
+    
 
