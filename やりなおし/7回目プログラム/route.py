@@ -5,7 +5,7 @@ def create_route(app):
 
     @app.route("/")
     def index():
-        return controller.top()
+        return controller.top() #"/"にアクセスしたときに、controller.topを実行。トップページを返す処理を行う
     
     @app.route("/json", methods=["GET","POST"])
     def json():
