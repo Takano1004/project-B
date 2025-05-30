@@ -1,4 +1,4 @@
-from flask import request, redirect, send_from_directory, render_template #修正前from flask import request, redirect, send_from_directory
+from flask import request, redirect, send_from_directory, render_template
 import controller
 
 def create_route(app):
