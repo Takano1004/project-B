@@ -54,4 +54,21 @@ def create_route(app):
             return render_template('register_complete.html')
         else:
             return render_template('lost_user.html')  # フォームを表示するテンプレートを返す
+            @app.route("/lost/request", methods=["GET", "POST"])
+            def lost_request():
+                if request.method == "POST":
+                    学籍番号 = request.form.get("学籍番号")
+                    氏名 = request.form.get("氏名")
+                    学年 = request.form.get("学年")
+                    学部学科 = request.form.get("学部学科")
+                    特徴 = request.form.get("特徴")
+                    落とした場所 = request.form.get("落とした場所")
+                    落とした日時 = request.form.get("落とした日時")
+                    # 処理例（ログ表示など）
+            print("遺失物依頼:", 学籍番号, 氏名, 学年, 学部学科, 特徴, 落とした場所, 落とした日時)
+
+            # 後でDB保存・メール通知・照合など処理を追加できる
+        return render_template("lost_request_complete.html")
+        return render_template("lost_request.html")
+
 
