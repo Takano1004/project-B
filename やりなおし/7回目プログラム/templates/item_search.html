@@ -1,1 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}拾得物検索{% endblock %}
+
+{% block content %}
+<h1>拾得物検索</h1>
+
+<form id="searchForm">
+    <input type="text" name="keyword" placeholder="物品名で検索">
+    <button type="submit">検索</button>
+</form>
+
+<table class="table" id="resultTable">
+    <thead>
+        <tr>
+            <th>物品名</th>
+            <th>大分類</th>
+            <th>色</th>
+            <th>特徴</th>
+            <th>拾得場所</th>
+            <th>変更内容</th>
+            <th>変更日時</th>
+            <th>拾得者</th>
+            <th>所属名</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+document.getElementById("searchForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const keyword = e.target.keyword.value;
+
+    const res = await fetch(`/api/json/item?key=${encodeURIComponent(keyword)}`);
+    const data = await res.json();
+
+    const tbody = document.querySelector("#resultTable tbody");
+    tbody.innerHTML = "";
+
+    if (data.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='9'>該当する拾得物が見つかりませんでした。</td></tr>";
+        return;
+    }
+
+    data.forEach(item => {
+        const row = `<tr>
+            <td>${item.物品名}</td>
+            <td>${item.大分類}</td>
+            <td>${item.色}</td>
+            <td>${item.特徴}</td>
+            <td>${item.拾得場所}</td>
+            <td>${item.変更内容}</td>
+            <td>${new Date(item.変更日時).toLocaleString()}</td>
+            <td>${item.氏名}</td>
+            <td>${item.所属名}</td>
+        </tr>`;
+        tbody.insertAdjacentHTML("beforeend", row);
+    });
+});
+</script>
+{% endblock %}
 
