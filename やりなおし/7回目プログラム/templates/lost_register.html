@@ -1,10 +1,46 @@
 {% extends "base.html" %}
 
-{% block title %}ユーザー未登録{% endblock %}
-
 {% block content %}
-<div class="container mt-4">
-    <h1>ユーザーが見つかりません</h1>
-    <p>入力内容をご確認ください。</p>
-</div>
+<main class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">拾得物登録</h2>
+      <form method="POST" action="/lost/register" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="分類ID" class="form-label">物品分類</label>
+          <select class="form-select" name="分類ID" required>
+            {% for category in categories %}
+            <option value="{{ category.ID }}">{{ category.物品名 }} ({{ category.大分類 }})</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="拾得場所" class="form-label">拾得場所</label>
+          <input type="text" class="form-control" name="拾得場所" required>
+        </div>
+        <div class="mb-3">
+          <label for="色" class="form-label">色</label>
+          <input type="text" class="form-control" name="色">
+        </div>
+        <div class="mb-3">
+          <label for="特徴" class="form-label">特徴</label>
+          <textarea class="form-control" name="特徴" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="画像" class="form-label">画像</label>
+          <input type="file" class="form-control" name="画像">
+        </div>
+        <div class="mb-3">
+          <label for="落とした日時" class="form-label">落とした日時</label>
+          <input type="datetime-local" class="form-control" name="落とした日時">
+        </div>
+        <div class="mb-3">
+          <label for="ユーザID" class="form-label">拾得者（ユーザID）</label>
+          <input type="number" class="form-control" name="ユーザID" required>
+        </div>
+        <button type="submit" class="btn btn-success">登録する</button>
+      </form>
+    </div>
+  </div>
+</main>
 {% endblock %}
