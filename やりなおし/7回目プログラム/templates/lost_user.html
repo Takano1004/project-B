@@ -4,29 +4,29 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="mb-4">拾得者（ユーザー）登録</h2>
+    <h2 class="mb-4">ユーザー登録</h2>
     <form method="post">
         <div class="mb-3">
-            <label for="student_id" class="form-label">学籍番号</label>
-            <input type="text" class="form-control" id="student_id" name="student_id" required>
-        </div>
-        <div class="mb-3">
             <label for="name" class="form-label">氏名</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="氏名" required>
         </div>
         <div class="mb-3">
-            <label for="faculty" class="form-label">学部</label>
-            <input type="text" class="form-control" id="faculty" name="faculty" required>
+            <label for="belonging_id" class="form-label">所属ID</label>
+            <input type="number" class="form-control" id="belonging_id" name="所属ID" required>
         </div>
         <div class="mb-3">
-            <label for="department" class="form-label">学科</label>
-            <input type="text" class="form-control" id="department" name="department" required>
+            <label for="phone" class="form-label">電話番号</label>
+            <input type="text" class="form-control" id="phone" name="電話番号">
         </div>
         <div class="mb-3">
-            <label for="grade" class="form-label">学年</label>
-            <input type="number" class="form-control" id="grade" name="grade" min="1" max="6" required>
+            <label for="email" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control" id="email" name="メールアドレス" required>
         </div>
-        <button type="submit" class="btn btn-success">送信</button>
+        <div class="mb-3">
+            <label for="address" class="form-label">住所</label>
+            <input type="text" class="form-control" id="address" name="住所">
+        </div>
+        <button type="submit" class="btn btn-primary">登録</button>
     </form>
 </div>
 {% endblock %}
