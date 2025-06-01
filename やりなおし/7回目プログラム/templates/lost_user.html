@@ -1,30 +1,33 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>学生情報入力フォーム</title>
-</head>
-<body>
 
-  <form action="/submit" method="post">
-    <label for="student-id">学籍番号:</label>
-    <input type="text" id="student-id" name="student_id" required><br>
+{% block title %}学生情報入力フォーム{% endblock %}
 
-    <label for="name">名前:</label>
-    <input type="text" id="name" name="name" required><br>
+{% block content %}
+  <div class="container mt-4">
+    <h2>学生情報入力フォーム</h2>
+    <form action="/submit" method="post">
+      <div class="mb-3">
+        <label for="student-id" class="form-label">学籍番号:</label>
+        <input type="text" id="student-id" name="student_id" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">名前:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="faculty" class="form-label">学部:</label>
+        <input type="text" id="faculty" name="faculty" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">学科:</label>
+        <input type="text" id="department" name="department" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="grade" class="form-label">学年:</label>
+        <input type="number" id="grade" name="grade" class="form-control" min="1" max="6" required>
+      </div>
+      <button type="submit" class="btn btn-success">送信</button>
+    </form>
+  </div>
+{% endblock %}
 
-    <label for="faculty">学部:</label>
-    <input type="text" id="faculty" name="faculty" required><br>
-
-    <label for="department">学科:</label>
-    <input type="text" id="department" name="department" required><br>
-
-    <label for="grade">学年:</label>
-    <input type="number" id="grade" name="grade" min="1" max="6" required><br>
-
-    <button type="submit">送信</button>
-  </form>
-
-</body>
-</html>
