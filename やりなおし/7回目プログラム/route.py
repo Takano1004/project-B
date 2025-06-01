@@ -38,6 +38,7 @@ def create_route(app):
     def form_download():
         return controller.form_download
 
+   
     @app.route('/register', methods=['GET', 'POST'])
     def register():
         if request.method == 'POST':
@@ -50,6 +51,7 @@ def create_route(app):
             )
             db.session.add(new_user)
             db.session.commit()
-            return render_template('register_complete.html')  # ← ここを変更
-            return render_template('register.html')
+            return render_template('register_complete.html')
+        else:
+            return render_template('lost_user.html')  # フォームを表示するテンプレートを返す
 
