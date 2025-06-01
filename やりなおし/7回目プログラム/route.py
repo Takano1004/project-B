@@ -36,5 +36,20 @@ def create_route(app):
 
     @app.route("/form/download")
     def form_download():
-        return controller.form_download()
+        return controller.form_download
+
+    @app.route('/register', methods=['GET', 'POST'])
+    def register():
+        if request.method == 'POST':
+            new_user = ユーザ(
+            氏名=request.form['氏名'],
+            所属ID=request.form['所属ID'],
+            電話番号=request.form['電話番号'],
+            メールアドレス=request.form['メールアドレス'],
+            住所=request.form['住所']
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            return render_template('register_complete.html')  # ← ここを変更
+            return render_template('register.html')
 
