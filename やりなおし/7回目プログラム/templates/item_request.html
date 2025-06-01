@@ -1,1 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}遺失物捜索依頼{% endblock %}
+
+{% block content %}
+<main class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">遺失物捜索依頼フォーム</h2>
+      <form method="POST" action="/lost/request">
+        <div class="mb-3">
+          <label for="学籍番号" class="form-label">学籍番号</label>
+          <input type="text" class="form-control" name="学籍番号" required>
+        </div>
+        <div class="mb-3">
+          <label for="氏名" class="form-label">氏名</label>
+          <input type="text" class="form-control" name="氏名" required>
+        </div>
+        <div class="mb-3">
+          <label for="学年" class="form-label">学年</label>
+          <input type="text" class="form-control" name="学年" required>
+        </div>
+        <div class="mb-3">
+          <label for="学部学科" class="form-label">学部・学科</label>
+          <input type="text" class="form-control" name="学部学科" required>
+        </div>
+        <div class="mb-3">
+          <label for="特徴" class="form-label">物の特徴</label>
+          <textarea class="form-control" name="特徴" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="落とした場所" class="form-label">落とした場所</label>
+          <input type="text" class="form-control" name="落とした場所">
+        </div>
+        <div class="mb-3">
+          <label for="落とした日時" class="form-label">落とした日時</label>
+          <input type="datetime-local" class="form-control" name="落とした日時">
+        </div>
+        <button type="submit" class="btn btn-primary">依頼する</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
 
