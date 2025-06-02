@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>帳票ダウンロード | 拾得物管理システム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>帳票ダウンロード</h1>
+        <p>以下から必要な帳票ファイルをダウンロードできます。</p>
 
+        <ul>
+            <li>
+                <a href="{{ url_for('download_file', filename='lost_item_form.pdf') }}">
+                    遺失物申請フォーム（PDF）
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('download_file', filename='found_item_report.xlsx') }}">
+                    拾得物報告書（Excel）
+                </a>
+            </li>
+        </ul>
+
+        <p><a href="{{ url_for('index') }}">トップページへ戻る</a></p>
+    </div>
+</body>
+</html>
