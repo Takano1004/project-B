@@ -1,1 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}遺失物捜索依頼一覧{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">遺失物捜索依頼一覧</h1>
+    <p>以下は、提出された遺失物捜索依頼の一覧です。</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>氏名</th>
+                <th>学籍番号</th>
+                <th>学年</th>
+                <th>学部・学科</th>
+                <th>特徴</th>
+                <th>落とした場所</th>
+                <th>落とした日時</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 仮データ -->
+            <tr>
+                <td>山田 太郎</td>
+                <td>12345678</td>
+                <td>3年</td>
+                <td>工学部 機械工学科</td>
+                <td>黒い長財布</td>
+                <td>図書館</td>
+                <td>2025-05-20 14:30</td>
+            </tr>
+            <tr>
+                <td>佐藤 花子</td>
+                <td>87654321</td>
+                <td>2年</td>
+                <td>経済学部 経済学科</td>
+                <td>ピンクの傘</td>
+                <td>食堂</td>
+                <td>2025-05-22 12:00</td>
+            </tr>
+            <!-- 必要に応じて仮データを追加 -->
+        </tbody>
+    </table>
+
+    <p class="mt-4"><a href="{{ url_for('index') }}">トップページへ戻る</a></p>
+</div>
+{% endblock %}
 
