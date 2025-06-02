@@ -36,7 +36,7 @@ def create_route(app):
 
     @app.route("/form/download")
     def form_download():
-        return controller.form_download
+        return controller.form_download()
 
    
     @app.route('/register', methods=['GET', 'POST'])
