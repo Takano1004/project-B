@@ -94,5 +94,8 @@ def lost_register():
 def form_download():
     return render_template("form_download.html")
 
+def item_list():
+    return render_template("item_list.html")
+
     
 
