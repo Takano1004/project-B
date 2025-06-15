@@ -34,7 +34,7 @@
                 <tbody>
                     {% for r in d.変更履歴 %}
                     <tr>
-                        <td>{{ r.変更日時.strftime("%Y-%m-%d %H:%M:%S") }}</td>
+                        <td>{{ r.変更日時 }}</td>
                         <td>{{ r.変更内容 }}</td>
                         <td>{{ r.氏名 }}</td>
                     </tr>
